@@ -11,7 +11,7 @@ import Card from '../components/Card.astro';
   <Hero 
     title="À propos du lycée"
     description="Découvrez l'histoire, les valeurs et l'équipe qui font la réputation du Lycée Sud-Médoc La Boétie depuis plus de 35 ans."
-    backgroundImage="/images/cour-lycee.jpg"
+    backgroundImage={`${import.meta.env.BASE_URL}images/cour-lycee.jpg`}
   />
 
   <!-- Histoire -->
