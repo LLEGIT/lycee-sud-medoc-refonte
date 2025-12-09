@@ -44,9 +44,9 @@ const innovationIcon = `<svg class="w-6 h-6 text-purple-600" fill="none" stroke=
     title="Lycée Sud-Médoc La Boétie"
     description="Un établissement d'excellence au cœur du Médoc, formant les citoyens de demain dans un cadre exceptionnel depuis 1985"
     primaryButtonText="Découvrir nos formations"
-    primaryButtonHref="/formations"
+    primaryButtonHref={`${import.meta.env.BASE_URL}/formations`}
     secondaryButtonText="Portes ouvertes"
-    secondaryButtonHref="/contact"
+    secondaryButtonHref={`${import.meta.env.BASE_URL}/contact`}
     backgroundImage={`${import.meta.env.BASE_URL}/images/hero-banner.jpg`}
   />
 
@@ -70,7 +70,7 @@ const innovationIcon = `<svg class="w-6 h-6 text-purple-600" fill="none" stroke=
       <QuickLinkCard 
         title="Orientation"
         description="Conseils et ressources"
-        href="/orientation"
+        href={`${import.meta.env.BASE_URL}/orientation`}
         icon={orientationIcon}
         bgColor="blue-50"
       />
@@ -78,7 +78,7 @@ const innovationIcon = `<svg class="w-6 h-6 text-purple-600" fill="none" stroke=
       <QuickLinkCard 
         title="Contact"
         description="Nous contacter facilement"
-        href="/contact"
+        href={`${import.meta.env.BASE_URL}/contact`}
         icon={contactIcon}
         bgColor="yellow-50"
       />
@@ -124,7 +124,7 @@ const innovationIcon = `<svg class="w-6 h-6 text-purple-600" fill="none" stroke=
     </div>
     
     <div class="text-center mt-12">
-      <a href="/actualites" class="btn-primary">
+      <a href={`${import.meta.env.BASE_URL}/actualites`} class="btn-primary">
         Voir toutes les actualités
       </a>
     </div>

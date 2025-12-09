@@ -157,15 +157,15 @@ import Card from '../components/Card.astro';
   </Section>
 
   <!-- Newsletter -->
-  <Section containerClass="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+  <Section title="Restez informés" containerClass="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
     <div class="text-center text-white">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">Restez informés</h2>
       <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">Ne manquez aucune actualité du lycée ! Suivez-nous sur nos réseaux sociaux ou consultez régulièrement notre site web.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/contact" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg">
+        <a href={`${import.meta.env.BASE_URL}/contact`} class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg">
           Nous contacter
         </a>
-        <a href="/" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg">
+        <a href={`${import.meta.env.BASE_URL}/`} class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg">
           Retour à l'accueil
         </a>
       </div>
