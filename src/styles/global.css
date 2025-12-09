@@ -1,12 +1,21 @@
 @import "tailwindcss";
 
+/* Font family utilities for Google Fonts */
+@theme {
+  --font-family-cutive: 'Cutive Mono', monospace;
+  --font-family-dela: 'Dela Gothic One', sans-serif;
+  --font-family-nabla: 'Nabla', sans-serif;
+  --font-family-newsreader: 'Newsreader', serif;
+  --font-family-sixtyfour: 'Sixtyfour', monospace;
+}
+
 /* Custom styles for the Lycée Sud-Médoc La Boétie website */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Newsreader', serif;
   line-height: 1.6;
 }
 
