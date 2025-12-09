@@ -13,73 +13,97 @@ import Card from '../components/Card.astro';
     description="N'hésitez pas à nous contacter pour toute question ou information complémentaire. Notre équipe est à votre disposition pour vous accompagner dans vos démarches."
   />
 
-  <!-- Contact Info with Image -->
-  <ImageSection 
+  <!-- Contact Info with Map -->
+  <Section 
     title="Lycée Sud-Médoc La Boétie"
-    description="Situé au cœur du Taillan-Médoc, notre établissement vous accueille dans un cadre moderne et convivial. Nous sommes facilement accessibles en transport en commun et disposons d'un parking pour les visiteurs."
-    imageUrl={`${import.meta.env.BASE_URL}/images/lycee-facade.jpeg`}
-    imageAlt="Façade du Lycée Sud-Médoc La Boétie"
-    bgColor="bg-white"
+    subtitle="Situé au cœur du Taillan-Médoc, notre établissement vous accueille dans un cadre moderne et convivial. Nous sommes facilement accessibles en transport en commun et disposons d'un parking pour les visiteurs."
+    containerClass="py-16 bg-white"
   >
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
-        <div class="flex items-start space-x-4">
-          <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-            </svg>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- Contact Information -->
+      <div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-blue-900 mb-1">Adresse</h3>
+                <p class="text-blue-700">2 avenue du Lycée<br>33320 Le Taillan-Médoc</p>
+              </div>
+            </div>
           </div>
-          <div>
-            <h3 class="font-semibold text-blue-900 mb-1">Adresse</h3>
-            <p class="text-blue-700">2 avenue du Lycée<br>33320 Le Taillan-Médoc</p>
+
+          <div class="bg-green-50 p-6 rounded-lg border border-green-100">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-green-900 mb-1">Téléphone</h3>
+                <p class="text-green-700">05 56 70 10 10</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-purple-50 p-6 rounded-lg border border-purple-100">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-purple-900 mb-1">Email</h3>
+                <p class="text-purple-700">ce.0331234x@ac-bordeaux.fr</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-orange-50 p-6 rounded-lg border border-orange-100">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-semibold text-orange-900 mb-1">Horaires d'accueil</h3>
+                <p class="text-orange-700 text-sm">Lun-Ven : 8h00-18h00<br>Sam : 8h00-12h00</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="bg-green-50 p-6 rounded-lg border border-green-100">
-        <div class="flex items-start space-x-4">
-          <div class="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-green-900 mb-1">Téléphone</h3>
-            <p class="text-green-700">05 56 70 10 10</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-purple-50 p-6 rounded-lg border border-purple-100">
-        <div class="flex items-start space-x-4">
-          <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-purple-900 mb-1">Email</h3>
-            <p class="text-purple-700">ce.0331234x@ac-bordeaux.fr</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-orange-50 p-6 rounded-lg border border-orange-100">
-        <div class="flex items-start space-x-4">
-          <div class="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-semibold text-orange-900 mb-1">Horaires d'accueil</h3>
-            <p class="text-orange-700 text-sm">Lun-Ven : 8h00-18h00<br>Sam : 8h00-12h00</p>
+      <!-- Map -->
+      <div class="lg:order-2">
+        <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg">
+          <iframe 
+            width="100%" 
+            height="400" 
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-0.7188257236480714%2C44.90233341269337%2C-0.7087746601104736%2C44.90976429907984&amp;layer=mapnik&amp;marker=44.906049%2C-0.713800" 
+            style="border: none;"
+            title="Localisation du Lycée Sud-Médoc La Boétie"
+            loading="lazy"
+          ></iframe>
+          <div class="p-4 bg-white">
+            <p class="text-sm text-gray-600 text-center">
+              <a href="https://www.openstreetmap.org/?#map=18/44.906049/-0.713800" target="_blank" rel="noopener" class="text-blue-600 hover:text-blue-700 underline">
+                Voir la carte en grand
+              </a>
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </ImageSection>
+  </Section>
   <!-- Contact Form et Services -->
   <Section 
     title="Nous écrire ou nous rendre visite"
@@ -202,10 +226,9 @@ import Card from '../components/Card.astro';
   </Section>
 
   <!-- Portes Ouvertes -->
-  <Section title="Portes ouvertes" containerClass="py-16 bg-gradient-to-r from-red-600 to-red-700">
+  <Section title="Portes ouvertes 2026" containerClass="py-16">
     <div class="text-center text-white">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">Portes ouvertes 2026</h2>
-      <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">Venez découvrir notre établissement et rencontrer nos équipes pédagogiques</p>
+      <p class="text-xl text-black mb-8 opacity-90 max-w-3xl mx-auto">Venez découvrir notre établissement et rencontrer nos équipes pédagogiques</p>
       
       <div class="bg-white text-gray-900 bg-opacity-20 rounded-lg p-8 mb-8 max-w-2xl mx-auto">
         <div class="flex items-center justify-center space-x-4 text-2xl font-bold mb-4">
