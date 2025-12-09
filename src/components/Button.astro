@@ -1,0 +1,37 @@
+---
+export interface Props {
+  text: string;
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  class?: string;
+}
+
+const { 
+  text, 
+  href = "#",
+  variant = 'primary',
+  size = 'md',
+  class: className = ''
+} = Astro.props;
+
+const baseClasses = 'font-semibold transition-all duration-200 hover:shadow-lg transform hover:-translate-y-0.5 inline-block text-center';
+
+const variantClasses = {
+  primary: 'bg-blue-600 text-white hover:bg-blue-700',
+  secondary: 'bg-gray-600 text-white hover:bg-gray-700',
+  outline: 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
+};
+
+const sizeClasses = {
+  sm: 'px-4 py-2 text-sm rounded-md',
+  md: 'px-6 py-3 rounded-lg',
+  lg: 'px-8 py-4 text-lg rounded-lg'
+};
+
+const classes = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
+---
+
+<a href={href} class={classes}>
+  {text}
+</a>

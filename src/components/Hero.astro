@@ -1,0 +1,47 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  description: string;
+  primaryButtonText?: string;
+  primaryButtonHref?: string;
+  secondaryButtonText?: string;
+  secondaryButtonHref?: string;
+  backgroundImage?: string;
+}
+
+const { 
+  title,
+  subtitle,
+  description,
+  primaryButtonText,
+  primaryButtonHref = "#",
+  secondaryButtonText,
+  secondaryButtonHref = "#",
+  backgroundImage
+} = Astro.props;
+---
+
+<section class="relative text-white py-24 overflow-hidden" style={backgroundImage ? `background-image: url('${backgroundImage}'); background-size: cover; background-position: center;` : ''}>
+  <div class={`absolute inset-0 ${backgroundImage ? 'bg-black opacity-50' : 'bg-gradient-to-r from-blue-600 to-blue-800'}`}></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">{title}</h1>
+    {subtitle && <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md">{subtitle}</p>}
+    <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md">{description}</p>
+    
+    {(primaryButtonText || secondaryButtonText) && (
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        {primaryButtonText && (
+          <a href={primaryButtonHref} class="btn-primary shadow-lg">
+            {primaryButtonText}
+          </a>
+        )}
+        {secondaryButtonText && (
+          <a href={secondaryButtonHref} class="btn-secondary bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 shadow-lg">
+            {secondaryButtonText}
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+</section>

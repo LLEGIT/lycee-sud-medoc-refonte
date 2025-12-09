@@ -1,0 +1,186 @@
+---
+import Layout from '../components/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import ImageSection from '../components/ImageSection.astro';
+import Card from '../components/Card.astro';
+import FeatureItem from '../components/FeatureItem.astro';
+---
+
+<Layout title="Vie scolaire - Lycée Sud-Médoc La Boétie">
+  <!-- Hero Section -->
+  <Hero 
+    title="Vie scolaire"
+    description="Un accompagnement quotidien pour favoriser l'épanouissement et la réussite de chaque élève dans un cadre bienveillant et structuré."
+    backgroundImage="/images/cour-lycee.jpg"
+  />
+
+  <!-- Organisation de la vie scolaire -->
+  <ImageSection 
+    title="Organisation et encadrement"
+    description="Notre équipe de vie scolaire assure un suivi personnalisé de chaque élève. Composée de Conseillers Principaux d'Éducation (CPE) et d'assistants d'éducation, elle veille au bien-être et à l'épanouissement de nos lycéens."
+    imageUrl="/images/eleves-action.jpg"
+    imageAlt="Élèves du lycée Sud-Médoc en activité"
+    bgColor="bg-white"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+        <h4 class="font-semibold text-blue-900 mb-3">Équipe vie scolaire</h4>
+        <ul class="space-y-2 text-blue-700">
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+            <span>8 Conseillers Principaux d'Éducation</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+            <span>15 Assistants d'éducation</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+            <span>1 Infirmière scolaire</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+            <span>1 Assistante sociale</span>
+          </li>
+        </ul>
+      </div>
+      <div class="bg-green-50 p-6 rounded-lg border border-green-100">
+        <h4 class="font-semibold text-green-900 mb-3">Horaires du lycée</h4>
+        <ul class="space-y-2 text-green-700">
+          <li><strong>Lundi à Vendredi :</strong> 7h30 - 18h30</li>
+          <li><strong>Mercredi :</strong> 7h30 - 17h00</li>
+          <li><strong>Samedi :</strong> 8h00 - 12h00 (selon planning)</li>
+          <li><strong>Accueil élèves :</strong> 8h00 - 17h30</li>
+        </ul>
+      </div>
+    </div>
+  </ImageSection>
+
+  <!-- Services et accompagnement -->
+  <Section 
+    title="Services et accompagnement"
+    subtitle="Des dispositifs d'aide et d'accompagnement pour tous les élèves"
+    containerClass="py-16 bg-gray-50"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Card title="Pronote" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-red-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+          <p class="text-gray-600 mb-4">Suivi en temps réel des notes, absences, emploi du temps et communication avec les familles.</p>
+          <a href="#" class="inline-block bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">Accéder à Pronote</a>
+        </div>
+      </Card>
+
+      <Card title="Infirmerie" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <p class="text-gray-600 mb-4">Soins, prévention santé, éducation à la santé et accompagnement des élèves.</p>
+          <p class="text-sm text-gray-500">Ouvert 8h-17h</p>
+        </div>
+      </Card>
+
+      <Card title="Assistance sociale" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <p class="text-gray-600 mb-4">Aide et conseil pour les difficultés sociales, familiales ou financières.</p>
+          <p class="text-sm text-gray-500">Sur rendez-vous</p>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Règlement et discipline -->
+  <ImageSection 
+    title="Règlement intérieur et discipline"
+    description="Le règlement intérieur définit les droits et devoirs de chacun au sein de notre communauté éducative. Il garantit un cadre serein et respectueux, propice aux apprentissages et à l'épanouissement de tous."
+    imageUrl="/images/cdi.jpeg"
+    imageAlt="Espace de travail du lycée"
+    reversed={true}
+    bgColor="bg-white"
+  >
+    <div class="space-y-6">
+      <FeatureItem 
+        title="Respect et tolérance"
+        description="Valeurs fondamentales qui guident nos relations au quotidien"
+        icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'></path></svg>"
+        iconColor="blue-600"
+      />
+      
+      <FeatureItem 
+        title="Assiduité et ponctualité"
+        description="Conditions indispensables à la réussite scolaire"
+        icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z'></path></svg>"
+        iconColor="green-600"
+      />
+      
+      <FeatureItem 
+        title="Travail et engagement"
+        description="Implication personnelle dans les apprentissages"
+        icon="<svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'><path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253'></path></svg>"
+        iconColor="purple-600"
+      />
+    </div>
+  </ImageSection>
+
+  <!-- Activités et clubs -->
+  <Section 
+    title="Clubs et activités"
+    subtitle="De nombreuses activités pour enrichir votre parcours lycéen"
+    containerClass="py-16 bg-gray-50"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center">
+        <div class="w-12 h-12 bg-blue-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+          <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-gray-900 mb-2">Club informatique</h4>
+        <p class="text-gray-600 text-sm">Programmation et nouvelles technologies</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center">
+        <div class="w-12 h-12 bg-green-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+          <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-gray-900 mb-2">Journal du lycée</h4>
+        <p class="text-gray-600 text-sm">Rédaction et édition</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center">
+        <div class="w-12 h-12 bg-purple-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+          <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-8 0h8m0 0v2a1 1 0 01-1 1H8a1 1 0 01-1-1V6m0-2V2"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-gray-900 mb-2">Théâtre</h4>
+        <p class="text-gray-600 text-sm">Expression dramatique</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 text-center">
+        <div class="w-12 h-12 bg-orange-100 rounded-lg mx-auto mb-4 flex items-center justify-center">
+          <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h4 class="font-semibold text-gray-900 mb-2">Éco-délégués</h4>
+        <p class="text-gray-600 text-sm">Développement durable</p>
+      </div>
+    </div>
+  </Section>
+</Layout>

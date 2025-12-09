@@ -1,16 +1,200 @@
 ---
+import Layout from '../components/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import ImageSection from '../components/ImageSection.astro';
+import QuickLinkCard from '../components/QuickLinkCard.astro';
+import Notice from '../components/Notice.astro';
+import NewsCard from '../components/NewsCard.astro';
+import FeatureItem from '../components/FeatureItem.astro';
 
+// Icon definitions
+const pronoteIcon = `<svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+</svg>`;
+
+const calendarIcon = `<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+</svg>`;
+
+const orientationIcon = `<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+</svg>`;
+
+const contactIcon = `<svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+</svg>`;
+
+const formationIcon = `<svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+</svg>`;
+
+const internationalIcon = `<svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>`;
+
+const innovationIcon = `<svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+</svg>`;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Lycée Sud-Médoc La Boétie - Le Taillan-Médoc">
+  <!-- Hero Section -->
+  <Hero 
+    title="Lycée Sud-Médoc La Boétie"
+    description="Un établissement d'excellence au cœur du Médoc, formant les citoyens de demain dans un cadre exceptionnel depuis 1985"
+    primaryButtonText="Découvrir nos formations"
+    primaryButtonHref="/formations"
+    secondaryButtonText="Portes ouvertes"
+    secondaryButtonHref="/contact"
+    backgroundImage="/images/hero-banner.jpg"
+  />
+
+  <!-- Quick Links -->
+  <Section title="" containerClass="py-12 bg-white">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <QuickLinkCard 
+        title="Pronote"
+        description="Accédez à vos notes et emploi du temps"
+        icon={pronoteIcon}
+        bgColor="red-50"
+      />
+      
+      <QuickLinkCard 
+        title="Calendrier"
+        description="Événements et dates importantes"
+        icon={calendarIcon}
+        bgColor="green-50"
+      />
+      
+      <QuickLinkCard 
+        title="Orientation"
+        description="Conseils et ressources"
+        href="/orientation"
+        icon={orientationIcon}
+        bgColor="blue-50"
+      />
+      
+      <QuickLinkCard 
+        title="Contact"
+        description="Nous contacter facilement"
+        href="/contact"
+        icon={contactIcon}
+        bgColor="yellow-50"
+      />
+    </div>
+  </Section>
+
+  <!-- Important Notice -->
+  <Notice 
+    message="<strong>Portes ouvertes :</strong> Samedi 7 mars 2026 de 9h à 12h - Venez découvrir notre établissement !"
+    type="error"
+  />
+
+  <!-- News Section -->
+  <Section 
+    title="Actualités du lycée"
+    subtitle="Découvrez les dernières nouvelles et événements de notre établissement"
+    containerClass="py-16 bg-gray-50"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <NewsCard 
+        title="Premières et Terminales LLCE à Londres"
+        date="7 décembre 2025"
+        excerpt="40 élèves de 1ère et Terminale LLCE vont découvrir Londres, ville artistique et littéraire, du 12 au 18 décembre."
+        gradientFrom="blue-400"
+        gradientTo="blue-600"
+      />
+      
+      <NewsCard 
+        title="Les Latinistes à Barzan"
+        date="9 octobre 2025"
+        excerpt="Sortie archéologique pour les latinistes du lycée avec visite du site, initiation aux fouilles et atelier frappe de monnaie."
+        gradientFrom="green-400"
+        gradientTo="green-600"
+      />
+      
+      <NewsCard 
+        title="Jeux des lycées UNSS"
+        date="2 octobre 2025"
+        excerpt="Belle journée pour le sport scolaire à Arcachon. Victoires de nos équipes de handball et volley-ball !"
+        gradientFrom="purple-400"
+        gradientTo="purple-600"
+      />
+    </div>
+    
+    <div class="text-center mt-12">
+      <a href="/actualites" class="btn-primary">
+        Voir toutes les actualités
+      </a>
+    </div>
+  </Section>
+
+  <!-- School Presentation -->
+  <ImageSection 
+    title="Notre établissement"
+    description="Situé au cœur du Taillan-Médoc, notre lycée accueille plus de 1200 élèves dans un environnement moderne et convivial. Depuis sa création, l'établissement s'engage à offrir une formation d'excellence tout en développant l'épanouissement personnel de chaque lycéen."
+    imageUrl="/images/lycee-facade.jpeg"
+    imageAlt="Façade du Lycée Sud-Médoc La Boétie"
+    bgColor="bg-gray-50"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+        <div class="text-blue-600 text-2xl font-bold mb-2">1200+</div>
+        <div class="text-gray-900 font-semibold">Élèves</div>
+        <div class="text-gray-600 text-sm">De la seconde à la terminale</div>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+        <div class="text-green-600 text-2xl font-bold mb-2">95%</div>
+        <div class="text-gray-900 font-semibold">Taux de réussite</div>
+        <div class="text-gray-600 text-sm">Au baccalauréat 2025</div>
+      </div>
+    </div>
+  </ImageSection>
+
+  <!-- School Features -->
+  <Section 
+    title="Nos atouts"
+    subtitle="Un lycée moderne qui accompagne chaque élève vers la réussite"
+  >
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8">
+        <FeatureItem 
+          title="Formations diversifiées"
+          description="8 spécialités en voie générale, 3 baccalauréats technologiques et de nombreuses options pour construire votre parcours personnalisé."
+          icon={formationIcon}
+          iconColor="blue-600"
+        />
+        
+        <FeatureItem 
+          title="Ouverture internationale"
+          description="Échanges scolaires avec l'Angleterre et l'Espagne, voyages pédagogiques et certifications linguistiques (Cambridge, DELE)."
+          icon={internationalIcon}
+          iconColor="green-600"
+        />
+        
+        <FeatureItem 
+          title="Innovation pédagogique"
+          description="Classes numériques, laboratoires modernes, projets culturels et partenariats avec les entreprises locales du Médoc."
+          icon={innovationIcon}
+          iconColor="purple-600"
+        />
+      </div>
+      
+      <div class="relative">
+        <img 
+          src="/images/cour-lycee.jpg" 
+          alt="Cour du lycée Sud-Médoc"
+          class="rounded-2xl shadow-xl w-full h-96 object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-2xl"></div>
+        <div class="absolute bottom-6 left-6 text-white">
+          <div class="bg-black bg-opacity-50 rounded-lg px-4 py-2">
+            <h4 class="text-lg font-bold">Notre campus</h4>
+            <p class="text-sm opacity-90">Un environnement moderne et stimulant</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Section>
+</Layout>

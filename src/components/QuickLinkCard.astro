@@ -1,0 +1,27 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  href?: string;
+  icon: string;
+  bgColor?: string;
+  iconColor?: string;
+}
+
+const { 
+  title, 
+  description, 
+  href = "#",
+  icon,
+  bgColor = "blue-50",
+  iconColor = "blue-600"
+} = Astro.props;
+---
+
+<a href={href} class={`card-hover bg-${bgColor} p-6 rounded-xl text-center group`}>
+  <div class={`w-12 h-12 bg-${bgColor.replace('-50', '-100')} rounded-lg mx-auto mb-4 flex items-center justify-center group-hover:bg-${bgColor.replace('-50', '-200')} transition-colors`}>
+    <Fragment set:html={icon} />
+  </div>
+  <h3 class="font-semibold text-gray-900 mb-2">{title}</h3>
+  <p class="text-sm text-gray-600">{description}</p>
+</a>

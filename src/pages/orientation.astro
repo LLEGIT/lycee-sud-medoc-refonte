@@ -1,0 +1,251 @@
+---
+import Layout from '../components/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import ImageSection from '../components/ImageSection.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout title="Orientation - Lycée Sud-Médoc La Boétie">
+  <!-- Hero Section -->
+  <Hero 
+    title="Orientation"
+    description="Construisons ensemble votre projet d'orientation post-bac. Notre équipe vous accompagne dans vos choix d'études supérieures et votre insertion professionnelle."
+    backgroundImage="/images/cdi.jpeg"
+  />
+
+  <!-- Accompagnement orientation -->
+  <ImageSection 
+    title="Un accompagnement personnalisé"
+    description="Nos conseillers d'orientation et psychologues de l'Éducation Nationale, en partenariat avec nos équipes pédagogiques, vous accompagnent dans la construction de votre projet d'orientation dès la classe de seconde."
+    imageUrl="/images/eleves-action.jpg"
+    imageAlt="Élèves en consultation d'orientation"
+    bgColor="bg-white"
+  >
+    <div class="space-y-6">
+      <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+        <h4 class="font-semibold text-blue-900 mb-3">Seconde</h4>
+        <p class="text-blue-700">Découverte des métiers et des formations, choix des spécialités de première</p>
+      </div>
+      <div class="bg-green-50 p-6 rounded-lg border border-green-100">
+        <h4 class="font-semibold text-green-900 mb-3">Première</h4>
+        <p class="text-green-700">Affinage du projet, découverte de Parcoursup, stages d'observation</p>
+      </div>
+      <div class="bg-purple-50 p-6 rounded-lg border border-purple-100">
+        <h4 class="font-semibold text-purple-900 mb-3">Terminale</h4>
+        <p class="text-purple-700">Finalisation des vœux Parcoursup, préparation aux études supérieures</p>
+      </div>
+    </div>
+  </ImageSection>
+
+  <!-- Parcoursup -->
+  <Section 
+    title="Parcoursup"
+    subtitle="Nous vous accompagnons dans vos démarches d'inscription dans l'enseignement supérieur"
+    containerClass="py-16 bg-gray-50"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <Card title="Phase d'information" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-2xl font-bold text-blue-600">1</span>
+          </div>
+          <h4 class="font-semibold text-gray-900 mb-2">Novembre - Janvier</h4>
+          <p class="text-gray-600 text-sm">Découverte des formations, participation aux journées portes ouvertes, salons étudiants</p>
+        </div>
+      </Card>
+
+      <Card title="Phase de formulation des vœux" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-2xl font-bold text-green-600">2</span>
+          </div>
+          <h4 class="font-semibold text-gray-900 mb-2">Janvier - Mars</h4>
+          <p class="text-gray-600 text-sm">Saisie des vœux, rédaction des lettres de motivation, finalisation du dossier</p>
+        </div>
+      </Card>
+
+      <Card title="Phase d'admission" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <span class="text-2xl font-bold text-purple-600">3</span>
+          </div>
+          <h4 class="font-semibold text-gray-900 mb-2">Juin - Septembre</h4>
+          <p class="text-gray-600 text-sm">Réponses des formations, phases d'admission, confirmation des choix</p>
+        </div>
+      </Card>
+    </div>
+
+    <div class="text-center mt-12">
+      <Button 
+        text="Accéder à Parcoursup" 
+        href="https://www.parcoursup.fr" 
+        variant="primary"
+      />
+    </div>
+  </Section>
+
+  <!-- Filières post-bac -->
+  <ImageSection 
+    title="Poursuites d'études"
+    description="Nos élèves intègrent une grande diversité d'établissements d'enseignement supérieur, reflet de la qualité de leur formation et de l'accompagnement reçu."
+    imageUrl="/images/salle-de-classe.png"
+    imageAlt="Salle de classe préparant l'avenir"
+    reversed={true}
+    bgColor="bg-white"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">Universités</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+            <span>Université de Bordeaux</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+            <span>Université Bordeaux Montaigne</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+            <span>Universités nationales</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">Formations courtes</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-green-600 rounded-full"></div>
+            <span>BTS et BTSA</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-green-600 rounded-full"></div>
+            <span>DUT et BUT</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-green-600 rounded-full"></div>
+            <span>Écoles spécialisées</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">Classes préparatoires</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
+            <span>CPGE scientifiques</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
+            <span>CPGE littéraires</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-purple-600 rounded-full"></div>
+            <span>CPGE économiques</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-xl font-semibold text-gray-900 mb-4">Écoles post-bac</h4>
+        <ul class="space-y-2 text-gray-600">
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-orange-600 rounded-full"></div>
+            <span>Écoles d'ingénieurs</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-orange-600 rounded-full"></div>
+            <span>Écoles de commerce</span>
+          </li>
+          <li class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-orange-600 rounded-full"></div>
+            <span>Écoles d'art et design</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ImageSection>
+
+  <!-- Ressources et outils -->
+  <Section 
+    title="Ressources et outils d'orientation"
+    subtitle="Des ressources pour vous aider dans vos recherches et réflexions"
+    containerClass="py-16 bg-gray-50"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Card title="ONISEP" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <p class="text-gray-600 mb-4">Information sur les métiers et les formations</p>
+          <Button 
+            text="Visiter" 
+            href="https://www.onisep.fr" 
+            variant="secondary"
+          />
+        </div>
+      </Card>
+
+      <Card title="Horizons21" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <p class="text-gray-600 mb-4">Aide au choix des spécialités</p>
+          <Button 
+            text="Découvrir" 
+            href="https://www.horizons21.fr" 
+            variant="secondary"
+          />
+        </div>
+      </Card>
+
+      <Card title="Mon orientation en ligne" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+          </div>
+          <p class="text-gray-600 mb-4">Service de chat et d'aide personnalisée</p>
+          <Button 
+            text="Contacter" 
+            href="https://www.monorientationenligne.fr" 
+            variant="secondary"
+          />
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Contact orientation -->
+  <Section containerClass="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+    <div class="text-center text-white">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Besoin d'aide pour votre orientation ?</h2>
+      <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">Nos conseillers d'orientation sont à votre disposition pour vous accompagner dans vos choix</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button 
+          text="Prendre rendez-vous" 
+          href="/contact" 
+          variant="secondary"
+          class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3"
+        />
+        <Button 
+          text="Nous contacter" 
+          href="/contact" 
+          variant="outline"
+          class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3"
+        />
+      </div>
+    </div>
+  </Section>
+</Layout>

@@ -1,0 +1,23 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  children: string;
+  bgColor?: string;
+  textColor?: string;
+}
+
+const { 
+  title,
+  subtitle,
+  children,
+  bgColor = 'bg-blue-50',
+  textColor = 'text-blue-900'
+} = Astro.props;
+---
+
+<div class={`${bgColor} rounded-xl p-8`}>
+  <h3 class={`text-2xl font-semibold ${textColor} mb-4`}>{title}</h3>
+  {subtitle && <p class="text-gray-600 mb-6">{subtitle}</p>}
+  <div set:html={children} />
+</div>

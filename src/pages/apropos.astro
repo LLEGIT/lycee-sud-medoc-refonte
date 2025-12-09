@@ -1,0 +1,144 @@
+---
+import Layout from '../components/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import ImageSection from '../components/ImageSection.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="À propos - Lycée Sud-Médoc La Boétie">
+  <!-- Hero Section -->
+  <Hero 
+    title="À propos du lycée"
+    description="Découvrez l'histoire, les valeurs et l'équipe qui font la réputation du Lycée Sud-Médoc La Boétie depuis plus de 35 ans."
+    backgroundImage="/images/cour-lycee.jpg"
+  />
+
+  <!-- Histoire -->
+  <ImageSection 
+    title="Notre histoire"
+    description="Créé en 1985, le Lycée Sud-Médoc La Boétie porte le nom du célèbre humaniste français Étienne de La Boétie, ami de Montaigne et fervent défenseur de la liberté. Depuis sa création, notre établissement n'a cessé de grandir et de se moderniser pour offrir à ses élèves un environnement d'apprentissage exceptionnel au cœur du Médoc."
+    imageUrl="/images/eleves-action.jpg"
+    imageAlt="Élèves en action au lycée Sud-Médoc"
+    bgColor="bg-white"
+  >
+    <div class="space-y-6">
+      <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+        <h4 class="font-semibold text-blue-900 mb-2">1985 - Création</h4>
+        <p class="text-blue-700 text-sm">Ouverture du lycée avec les premières classes de seconde</p>
+      </div>
+      <div class="bg-green-50 p-6 rounded-lg border border-green-100">
+        <h4 class="font-semibold text-green-900 mb-2">1990 - Expansion</h4>
+        <p class="text-green-700 text-sm">Ajout des filières technologiques et extension des bâtiments</p>
+      </div>
+      <div class="bg-purple-50 p-6 rounded-lg border border-purple-100">
+        <h4 class="font-semibold text-purple-900 mb-2">2020 - Modernisation</h4>
+        <p class="text-purple-700 text-sm">Rénovation complète des laboratoires et équipement numérique</p>
+      </div>
+    </div>
+  </ImageSection>
+
+  <!-- Valeurs -->
+  <Section 
+    title="Nos valeurs"
+    subtitle="Les principes qui guident notre action éducative au quotidien"
+    containerClass="py-16 bg-gray-50"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <Card title="Excellence académique" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <p class="text-gray-600">Nous visons l'excellence dans tous les domaines d'apprentissage, en adaptant notre pédagogie aux besoins de chaque élève.</p>
+        </div>
+      </Card>
+
+      <Card title="Épanouissement personnel" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <p class="text-gray-600">Nous encourageons le développement de la personnalité, la créativité et l'esprit critique de nos élèves.</p>
+        </div>
+      </Card>
+
+      <Card title="Ouverture au monde" bgColor="bg-white">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <p class="text-gray-600">Nous préparons nos élèves à devenir des citoyens responsables et ouverts sur le monde contemporain.</p>
+        </div>
+      </Card>
+    </div>
+  </Section>
+
+  <!-- Équipe -->
+  <ImageSection 
+    title="Notre équipe éducative"
+    description="Plus de 80 enseignants et personnels administratifs travaillent ensemble pour offrir un accompagnement de qualité à nos 1200 élèves. Notre équipe pluridisciplinaire met son expertise au service de la réussite de chaque lycéen."
+    imageUrl="/images/cdi.jpeg"
+    imageAlt="Centre de documentation du lycée"
+    reversed={true}
+    bgColor="bg-white"
+  >
+    <div class="grid grid-cols-2 gap-6">
+      <div class="text-center bg-blue-50 p-6 rounded-lg">
+        <div class="text-3xl font-bold text-blue-600 mb-2">80+</div>
+        <div class="text-blue-900 font-semibold">Enseignants</div>
+      </div>
+      <div class="text-center bg-green-50 p-6 rounded-lg">
+        <div class="text-3xl font-bold text-green-600 mb-2">25+</div>
+        <div class="text-green-900 font-semibold">Personnel administratif</div>
+      </div>
+      <div class="text-center bg-purple-50 p-6 rounded-lg">
+        <div class="text-3xl font-bold text-purple-600 mb-2">8</div>
+        <div class="text-purple-900 font-semibold">Conseillers principaux</div>
+      </div>
+      <div class="text-center bg-orange-50 p-6 rounded-lg">
+        <div class="text-3xl font-bold text-orange-600 mb-2">15</div>
+        <div class="text-orange-900 font-semibold">Années d'expérience moyenne</div>
+      </div>
+    </div>
+  </ImageSection>
+
+  <!-- Chiffres clés -->
+  <Section 
+    title="Le lycée en chiffres"
+    subtitle="Quelques données qui témoignent de notre engagement et de nos résultats"
+    containerClass="py-16 bg-gray-50"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="text-center bg-white p-8 rounded-xl shadow-sm">
+        <div class="text-4xl font-bold text-blue-600 mb-2">1200</div>
+        <div class="text-gray-900 font-semibold mb-2">Élèves</div>
+        <p class="text-gray-600 text-sm">De la seconde à la terminale</p>
+      </div>
+      
+      <div class="text-center bg-white p-8 rounded-xl shadow-sm">
+        <div class="text-4xl font-bold text-green-600 mb-2">95%</div>
+        <div class="text-gray-900 font-semibold mb-2">Taux de réussite</div>
+        <p class="text-gray-600 text-sm">Au baccalauréat 2025</p>
+      </div>
+      
+      <div class="text-center bg-white p-8 rounded-xl shadow-sm">
+        <div class="text-4xl font-bold text-purple-600 mb-2">85%</div>
+        <div class="text-gray-900 font-semibold mb-2">Mentions</div>
+        <p class="text-gray-600 text-sm">Mentions AB, B et TB</p>
+      </div>
+      
+      <div class="text-center bg-white p-8 rounded-xl shadow-sm">
+        <div class="text-4xl font-bold text-orange-600 mb-2">11</div>
+        <div class="text-gray-900 font-semibold mb-2">Spécialités</div>
+        <p class="text-gray-600 text-sm">Formations proposées</p>
+      </div>
+    </div>
+  </Section>
+</Layout>
