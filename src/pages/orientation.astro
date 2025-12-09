@@ -12,14 +12,14 @@ import Button from '../components/Button.astro';
   <Hero 
     title="Orientation"
     description="Construisons ensemble votre projet d'orientation post-bac. Notre équipe vous accompagne dans vos choix d'études supérieures et votre insertion professionnelle."
-    backgroundImage="/images/cdi.jpeg"
+    backgroundImage={`${import.meta.env.BASE_URL}/images/cdi.jpeg`}
   />
 
   <!-- Accompagnement orientation -->
   <ImageSection 
     title="Un accompagnement personnalisé"
     description="Nos conseillers d'orientation et psychologues de l'Éducation Nationale, en partenariat avec nos équipes pédagogiques, vous accompagnent dans la construction de votre projet d'orientation dès la classe de seconde."
-    imageUrl="/images/eleves-action.jpg"
+    imageUrl={`${import.meta.env.BASE_URL}/images/eleves-action.jpg`}
     imageAlt="Élèves en consultation d'orientation"
     bgColor="bg-white"
   >
@@ -90,7 +90,7 @@ import Button from '../components/Button.astro';
   <ImageSection 
     title="Poursuites d'études"
     description="Nos élèves intègrent une grande diversité d'établissements d'enseignement supérieur, reflet de la qualité de leur formation et de l'accompagnement reçu."
-    imageUrl="/images/salle-de-classe.png"
+    imageUrl={`${import.meta.env.BASE_URL}/images/salle-de-classe.png`}
     imageAlt="Salle de classe préparant l'avenir"
     reversed={true}
     bgColor="bg-white"

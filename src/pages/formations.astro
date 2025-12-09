@@ -18,7 +18,7 @@ import Hero from '../components/Hero.astro';
   <ImageSection 
     title="Voie générale"
     description="Notre lycée propose 8 spécialités pour la voie générale, permettant à chaque élève de construire un parcours personnalisé adapté à ses projets d'orientation et ses centres d'intérêt."
-    imageUrl="/images/salle-de-classe.png"
+    imageUrl={`${import.meta.env.BASE_URL}/images/salle-de-classe.png`}
     imageAlt="Salle de classe du lycée Sud-Médoc"
     bgColor="bg-white"
   >
@@ -66,7 +66,7 @@ import Hero from '../components/Hero.astro';
   <ImageSection 
     title="Voie technologique" 
     description="Trois baccalauréats technologiques pour une approche concrète et appliquée des enseignements, ouvrant vers des poursuites d'études diversifiées dans l'enseignement supérieur."
-    imageUrl="/images/labo.jpg"
+    imageUrl={`${import.meta.env.BASE_URL}/images/labo.jpg`}
     imageAlt="Laboratoire de sciences du lycée"
     reversed={true}
     bgColor="bg-gray-50"

@@ -19,7 +19,7 @@ import FeatureItem from '../components/FeatureItem.astro';
   <ImageSection 
     title="Organisation et encadrement"
     description="Notre équipe de vie scolaire assure un suivi personnalisé de chaque élève. Composée de Conseillers Principaux d'Éducation (CPE) et d'assistants d'éducation, elle veille au bien-être et à l'épanouissement de nos lycéens."
-    imageUrl="/images/eleves-action.jpg"
+    imageUrl={`${import.meta.env.BASE_URL}/images/eleves-action.jpg`}
     imageAlt="Élèves du lycée Sud-Médoc en activité"
     bgColor="bg-white"
   >
@@ -106,7 +106,7 @@ import FeatureItem from '../components/FeatureItem.astro';
   <ImageSection 
     title="Règlement intérieur et discipline"
     description="Le règlement intérieur définit les droits et devoirs de chacun au sein de notre communauté éducative. Il garantit un cadre serein et respectueux, propice aux apprentissages et à l'épanouissement de tous."
-    imageUrl="/images/cdi.jpeg"
+    imageUrl={`${import.meta.env.BASE_URL}/images/cdi.jpeg`}
     imageAlt="Espace de travail du lycée"
     reversed={true}
     bgColor="bg-white"

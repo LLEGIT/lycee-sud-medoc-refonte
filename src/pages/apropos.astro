@@ -18,7 +18,7 @@ import Card from '../components/Card.astro';
   <ImageSection 
     title="Notre histoire"
     description="Créé en 1985, le Lycée Sud-Médoc La Boétie porte le nom du célèbre humaniste français Étienne de La Boétie, ami de Montaigne et fervent défenseur de la liberté. Depuis sa création, notre établissement n'a cessé de grandir et de se moderniser pour offrir à ses élèves un environnement d'apprentissage exceptionnel au cœur du Médoc."
-    imageUrl="/images/eleves-action.jpg"
+    imageUrl={`${import.meta.env.BASE_URL}/images/eleves-action.jpg`}
     imageAlt="Élèves en action au lycée Sud-Médoc"
     bgColor="bg-white"
   >
@@ -84,7 +84,7 @@ import Card from '../components/Card.astro';
   <ImageSection 
     title="Notre équipe éducative"
     description="Plus de 80 enseignants et personnels administratifs travaillent ensemble pour offrir un accompagnement de qualité à nos 1200 élèves. Notre équipe pluridisciplinaire met son expertise au service de la réussite de chaque lycéen."
-    imageUrl="/images/cdi.jpeg"
+    imageUrl={`${import.meta.env.BASE_URL}/images/cdi.jpeg`}
     imageAlt="Centre de documentation du lycée"
     reversed={true}
     bgColor="bg-white"
