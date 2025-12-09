@@ -32,12 +32,12 @@ const {
     {(primaryButtonText || secondaryButtonText) && (
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         {primaryButtonText && (
-          <a href={primaryButtonHref} class="btn-primary shadow-lg">
+          <a href={primaryButtonHref} class="bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-100 hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 shadow-lg">
             {primaryButtonText}
           </a>
         )}
         {secondaryButtonText && (
-          <a href={secondaryButtonHref} class="btn-secondary bg-transparent border-2 border-white text-white hover:bg-white hover:text-blue-600 shadow-lg">
+          <a href={secondaryButtonHref} class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-100 hover:text-gray-900 hover:shadow-xl transform hover:-translate-y-1 hover:scale-105 shadow-lg">
             {secondaryButtonText}
           </a>
         )}

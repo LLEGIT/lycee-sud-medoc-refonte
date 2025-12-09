@@ -13,13 +13,36 @@ const {
   date, 
   excerpt, 
   href = "#",
-  gradientFrom = "blue-400",
-  gradientTo = "blue-600"
+  gradientFrom,
+  gradientTo
 } = Astro.props;
+
+const gradientOptions = [
+  "bg-gradient-to-br from-blue-400 to-blue-600",
+  "bg-gradient-to-br from-green-400 to-green-600",
+  "bg-gradient-to-br from-purple-400 to-purple-600",
+  "bg-gradient-to-br from-red-400 to-red-600",
+  "bg-gradient-to-br from-orange-400 to-orange-600",
+  "bg-gradient-to-br from-indigo-400 to-indigo-600",
+  "bg-gradient-to-br from-pink-400 to-pink-600",
+  "bg-gradient-to-br from-teal-400 to-teal-600",
+  "bg-gradient-to-br from-cyan-400 to-cyan-600",
+  "bg-gradient-to-br from-emerald-400 to-emerald-600",
+  "bg-gradient-to-br from-violet-400 to-violet-600",
+  "bg-gradient-to-br from-rose-400 to-rose-600"
+];
+
+let finalGradientClass = "";
+
+if (gradientFrom && gradientTo) {
+  finalGradientClass = `bg-gradient-to-br from-${gradientFrom} to-${gradientTo}`;
+} else {
+  finalGradientClass = gradientOptions[Math.floor(Math.random() * gradientOptions.length)];
+}
 ---
 
 <article class="card-hover bg-white rounded-xl shadow-md overflow-hidden">
-  <div class={`h-48 bg-linear-to-br from-${gradientFrom} to-${gradientTo}`}></div>
+  <div class={`h-48 ${finalGradientClass}`}></div>
   <div class="p-6">
     <div class="flex items-center text-sm text-gray-500 mb-3">
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,0 +1,174 @@
+---
+import Layout from '../components/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Section from '../components/Section.astro';
+import NewsCard from '../components/NewsCard.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Actualités - Lycée Sud-Médoc La Boétie">
+  <!-- Hero Section -->
+  <Hero 
+    title="Actualités du lycée"
+    description="Suivez toute l'actualité du Lycée Sud-Médoc La Boétie : événements, projets pédagogiques, sorties scolaires et vie de l'établissement."
+    backgroundImage="/images/eleves-action.jpg"
+  />
+
+  <!-- Dernières actualités -->
+  <Section 
+    title="À la une"
+    subtitle="Les dernières nouvelles de notre établissement"
+    containerClass="py-16 bg-white"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <NewsCard 
+        title="Premières et Terminales LLCE à Londres"
+        date="7 décembre 2025"
+        excerpt="40 élèves de 1ère et Terminale LLCE vont découvrir Londres, ville artistique et littéraire, du 12 au 18 décembre. Au programme : théâtres, musées et découverte culturelle."
+      />
+      
+      <NewsCard 
+        title="Journées Portes Ouvertes 2026"
+        date="5 décembre 2025"
+        excerpt="Rendez-vous le samedi 7 mars 2026 de 9h à 12h pour découvrir notre établissement, rencontrer nos équipes et visiter nos installations modernes."
+      />
+      
+      <NewsCard 
+        title="Prix d'excellence au concours de mathématiques"
+        date="28 novembre 2025"
+        excerpt="Nos élèves de Terminale spécialité Mathématiques remportent le premier prix régional du concours Kangourou. Félicitations à toute l'équipe !"
+      />
+    </div>
+  </Section>
+
+  <!-- Archives par catégorie -->
+  <Section 
+    title="Toutes nos actualités"
+    subtitle="Retrouvez l'ensemble de nos nouvelles classées par thématique"
+    containerClass="py-16 bg-gray-50"
+  >
+    <!-- Vie pédagogique -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold text-gray-900 mb-8">Vie pédagogique</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Card title="Sortie géologique - Terminale SVT" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">15 novembre 2025</p>
+            <p class="text-gray-700">Les élèves de Terminale SVT ont exploré les formations géologiques du Bassin d'Arcachon avec leurs professeurs.</p>
+          </div>
+        </Card>
+
+        <Card title="Laboratoire de langues modernisé" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">10 novembre 2025</p>
+            <p class="text-gray-700">Inauguration du nouveau laboratoire de langues équipé d'outils numériques innovants pour l'apprentissage linguistique.</p>
+          </div>
+        </Card>
+
+        <Card title="Projet théâtre - Festival des lycées" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">3 novembre 2025</p>
+            <p class="text-gray-700">L'atelier théâtre présente sa nouvelle création au Festival régional des lycées de Nouvelle-Aquitaine.</p>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+    <!-- Sorties et voyages -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold text-gray-900 mb-8">Sorties et voyages</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Card title="Les Latinistes à Barzan" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">9 octobre 2025</p>
+            <p class="text-gray-700">Sortie archéologique pour les latinistes du lycée avec visite du site gallo-romain, initiation aux fouilles et atelier frappe de monnaie.</p>
+          </div>
+        </Card>
+
+        <Card title="Échange scolaire avec l'Espagne" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">25 septembre 2025</p>
+            <p class="text-gray-700">20 élèves de 1ère LLCE Espagnol partent en échange avec notre lycée partenaire de Séville.</p>
+          </div>
+        </Card>
+
+        <Card title="Sortie au musée d'Art contemporain" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">18 septembre 2025</p>
+            <p class="text-gray-700">Les élèves d'Arts plastiques découvrent l'exposition temporaire sur l'art numérique au CAPC de Bordeaux.</p>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+    <!-- Sport et activités -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold text-gray-900 mb-8">Sport et activités</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Card title="Jeux des lycées UNSS" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">2 octobre 2025</p>
+            <p class="text-gray-700">Belle journée pour le sport scolaire à Arcachon. Victoires de nos équipes de handball et volley-ball !</p>
+          </div>
+        </Card>
+
+        <Card title="Cross départemental" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">20 septembre 2025</p>
+            <p class="text-gray-700">Nos coureurs se distinguent au cross départemental avec 3 qualifications pour les championnats régionaux.</p>
+          </div>
+        </Card>
+
+        <Card title="Tournoi de football inter-lycées" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">15 septembre 2025</p>
+            <p class="text-gray-700">L'équipe de football du lycée termine 2ème du tournoi départemental. Bravo aux joueurs !</p>
+          </div>
+        </Card>
+      </div>
+    </div>
+
+    <!-- Orientation et partenariats -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold text-gray-900 mb-8">Orientation et partenariats</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Card title="Forum des métiers 2025" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">12 octobre 2025</p>
+            <p class="text-gray-700">Plus de 50 professionnels ont rencontré nos élèves pour présenter leurs métiers et secteurs d'activité.</p>
+          </div>
+        </Card>
+
+        <Card title="Partenariat avec l'Université de Bordeaux" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">5 octobre 2025</p>
+            <p class="text-gray-700">Signature d'un nouveau partenariat pour faciliter l'orientation de nos bacheliers vers les études supérieures.</p>
+          </div>
+        </Card>
+
+        <Card title="Immersion en entreprise" bgColor="bg-white">
+          <div>
+            <p class="text-gray-600 text-sm mb-3">1er octobre 2025</p>
+            <p class="text-gray-700">Les élèves de 1ère effectuent leur stage d'observation dans des entreprises locales du Médoc.</p>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </Section>
+
+  <!-- Newsletter -->
+  <Section containerClass="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+    <div class="text-center text-white">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Restez informés</h2>
+      <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">Ne manquez aucune actualité du lycée ! Suivez-nous sur nos réseaux sociaux ou consultez régulièrement notre site web.</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg">
+          Nous contacter
+        </a>
+        <a href="/" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg">
+          Retour à l'accueil
+        </a>
+      </div>
+    </div>
+  </Section>
+</Layout>
