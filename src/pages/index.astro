@@ -7,6 +7,10 @@ import QuickLinkCard from '../components/QuickLinkCard.astro';
 import Notice from '../components/Notice.astro';
 import NewsCard from '../components/NewsCard.astro';
 import FeatureItem from '../components/FeatureItem.astro';
+import { getMediaCollection, getImageUrl } from '../utils/media.js';
+
+// Load media collection
+const { media, available } = await getMediaCollection();
 
 // Icon definitions
 const pronoteIcon = `<svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +51,7 @@ const innovationIcon = `<svg class="w-6 h-6 text-purple-600" fill="none" stroke=
     primaryButtonHref={`${import.meta.env.BASE_URL}/formations`}
     secondaryButtonText="Portes ouvertes"
     secondaryButtonHref={`${import.meta.env.BASE_URL}/contact`}
-    backgroundImage={`${import.meta.env.BASE_URL}/images/hero-banner.jpg`}
+    backgroundImage={getImageUrl('heroBanner', `${import.meta.env.BASE_URL}/images/hero-banner.jpg`)}
   />
 
   <!-- Quick Links -->
@@ -134,7 +138,7 @@ const innovationIcon = `<svg class="w-6 h-6 text-purple-600" fill="none" stroke=
   <ImageSection 
     title="Notre établissement"
     description="Situé au cœur du Taillan-Médoc, notre lycée accueille plus de 1200 élèves dans un environnement moderne et convivial. Depuis sa création, l'établissement s'engage à offrir une formation d'excellence tout en développant l'épanouissement personnel de chaque lycéen."
-    imageUrl={`${import.meta.env.BASE_URL}/images/lycee-facade.jpeg`}
+    imageUrl={getImageUrl('lyceeFacade', `${import.meta.env.BASE_URL}/images/lycee-facade.jpeg`)}
     imageAlt="Façade du Lycée Sud-Médoc La Boétie"
     bgColor="bg-gray-50"
   >
@@ -183,7 +187,7 @@ const innovationIcon = `<svg class="w-6 h-6 text-purple-600" fill="none" stroke=
       
       <div class="relative">
         <img 
-          src={`${import.meta.env.BASE_URL}/images/cour-lycee.jpg`} 
+          src={getImageUrl('courLycee', `${import.meta.env.BASE_URL}/images/cour-lycee.jpg`)} 
           alt="Cour du lycée Sud-Médoc"
           class="rounded-2xl shadow-xl w-full h-96 object-cover"
         />

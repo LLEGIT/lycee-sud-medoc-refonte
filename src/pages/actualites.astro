@@ -4,6 +4,10 @@ import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
 import NewsCard from '../components/NewsCard.astro';
 import Card from '../components/Card.astro';
+import { getMediaCollection, getImageUrl } from '../utils/media.js';
+
+// Load media collection
+const { media, available } = await getMediaCollection();
 ---
 
 <Layout title="Actualités - Lycée Sud-Médoc La Boétie">
@@ -11,7 +15,7 @@ import Card from '../components/Card.astro';
   <Hero 
     title="Actualités du lycée"
     description="Suivez toute l'actualité du Lycée Sud-Médoc La Boétie : événements, projets pédagogiques, sorties scolaires et vie de l'établissement."
-    backgroundImage={`${import.meta.env.BASE_URL}/images/eleves-action.jpg`}
+    backgroundImage={getImageUrl('elevesAction', `${import.meta.env.BASE_URL}/images/eleves-action.jpg`)}
   />
 
   <!-- Dernières actualités -->

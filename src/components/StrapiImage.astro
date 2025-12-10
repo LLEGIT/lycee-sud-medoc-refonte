@@ -1,0 +1,29 @@
+---
+import { getStrapiMedia } from '../utils/strapi.js';
+
+export interface Props {
+  media: any;
+  alt: string;
+  class?: string;
+  width?: number;
+  height?: number;
+}
+
+const { media, alt, class: className = '', width, height } = Astro.props;
+const imageUrl = getStrapiMedia(media);
+---
+
+{imageUrl ? (
+  <img 
+    src={imageUrl} 
+    alt={alt}
+    class={className}
+    width={width}
+    height={height}
+    loading="lazy"
+  />
+) : (
+  <div class={`bg-gray-200 flex items-center justify-center ${className}`}>
+    <span class="text-gray-500">Image not found</span>
+  </div>
+)}
