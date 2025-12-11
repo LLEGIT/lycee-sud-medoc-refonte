@@ -14,34 +14,25 @@ export async function getMediaCollection() {
     const images = imagesResponse;
     strapiAvailable = true;
     
-    // Create a map of common image names to Strapi media objects
     mediaCache = {
-      // Logos
       logo: images.find(img => img.name.toLowerCase().includes('logo')),
       onisep: images.find(img => img.name.toLowerCase().includes('onisep')),
       horizons21: images.find(img => img.name.toLowerCase().includes('horizons21')),
       
-      // Hero images
       heroBanner: images.find(img => img.name.toLowerCase().includes('hero-banner')),
       heroOrientation: images.find(img => img.name.toLowerCase().includes('hero-orientation') || img.name.toLowerCase().includes('orientation-hero')),
       
-      // Building/Campus images
       lyceeFacade: images.find(img => img.name.toLowerCase().includes('lycee-facade')),
       courLycee: images.find(img => img.name.toLowerCase().includes('cour-lycee')),
       
-      // Activity images
       elevesAction: images.find(img => img.name.toLowerCase().includes('eleves-action')),
       salleDeClasse: images.find(img => img.name.toLowerCase().includes('salle-de-classe')),
       cdi: images.find(img => img.name.toLowerCase().includes('cdi')),
       labo: images.find(img => img.name.toLowerCase().includes('labo')),
     };
     
-    console.log('✅ Global media collection loaded successfully');
-    console.log('Available images:', images.map(img => img.name));
-    
     return { media: mediaCache, available: strapiAvailable };
   } catch (error) {
-    console.warn('⚠️ Strapi media not available, falling back to local images:', error.message);
     strapiAvailable = false;
     mediaCache = {};
     return { media: mediaCache, available: strapiAvailable };
