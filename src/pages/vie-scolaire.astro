@@ -5,10 +5,6 @@ import Section from '../components/Section.astro';
 import ImageSection from '../components/ImageSection.astro';
 import Card from '../components/Card.astro';
 import FeatureItem from '../components/FeatureItem.astro';
-import { getMediaCollection, getImageUrl } from '../utils/media.js';
-
-// Load media collection
-const { media, available } = await getMediaCollection();
 ---
 
 <Layout title="Vie scolaire - Lycée Sud-Médoc La Boétie">
@@ -16,14 +12,14 @@ const { media, available } = await getMediaCollection();
   <Hero 
     title="Vie scolaire"
     description="Un accompagnement quotidien pour favoriser l'épanouissement et la réussite de chaque élève dans un cadre bienveillant et structuré."
-    backgroundImage={getImageUrl('courLycee', `${import.meta.env.BASE_URL}/images/cour-lycee.jpg`)}
+    backgroundImage={`${import.meta.env.BASE_URL}/images/cour-lycee.jpg`}
   />
 
   <!-- Organisation de la vie scolaire -->
   <ImageSection 
     title="Organisation et encadrement"
     description="Notre équipe de vie scolaire assure un suivi personnalisé de chaque élève. Composée de Conseillers Principaux d'Éducation (CPE) et d'assistants d'éducation, elle veille au bien-être et à l'épanouissement de nos lycéens."
-    imageUrl={getImageUrl('elevesAction', `${import.meta.env.BASE_URL}/images/eleves-action.jpg`)}
+    imageUrl={`${import.meta.env.BASE_URL}/images/eleves-action.jpg`}
     imageAlt="Élèves du lycée Sud-Médoc en activité"
     bgColor="bg-white"
   >
@@ -110,7 +106,7 @@ const { media, available } = await getMediaCollection();
   <ImageSection 
     title="Règlement intérieur et discipline"
     description="Le règlement intérieur définit les droits et devoirs de chacun au sein de notre communauté éducative. Il garantit un cadre serein et respectueux, propice aux apprentissages et à l'épanouissement de tous."
-    imageUrl={getImageUrl('cdi', `${import.meta.env.BASE_URL}/images/cdi.jpeg`)}
+    imageUrl={`${import.meta.env.BASE_URL}/images/cdi.jpeg`}
     imageAlt="Espace de travail du lycée"
     reversed={true}
     bgColor="bg-white"

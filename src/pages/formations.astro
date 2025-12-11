@@ -5,10 +5,6 @@ import ImageSection from '../components/ImageSection.astro';
 import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
 import Hero from '../components/Hero.astro';
-import { getMediaCollection, getImageUrl } from '../utils/media.js';
-
-// Load media collection
-const { media, available } = await getMediaCollection();
 ---
 
 <Layout title="Formations - Lycée Sud-Médoc La Boétie">
@@ -22,7 +18,7 @@ const { media, available } = await getMediaCollection();
   <ImageSection 
     title="Voie générale"
     description="Notre lycée propose 8 spécialités pour la voie générale, permettant à chaque élève de construire un parcours personnalisé adapté à ses projets d'orientation et ses centres d'intérêt."
-    imageUrl={getImageUrl('salleDeClasse', `${import.meta.env.BASE_URL}/images/salle-de-classe.png`)}
+    imageUrl={`${import.meta.env.BASE_URL}/images/salle-de-classe.png`}
     imageAlt="Salle de classe du lycée Sud-Médoc"
     bgColor="bg-white"
   >
@@ -70,7 +66,7 @@ const { media, available } = await getMediaCollection();
   <ImageSection 
     title="Voie technologique" 
     description="Trois baccalauréats technologiques pour une approche concrète et appliquée des enseignements, ouvrant vers des poursuites d'études diversifiées dans l'enseignement supérieur."
-    imageUrl={getImageUrl('labo', `${import.meta.env.BASE_URL}/images/labo.jpg`)}
+    imageUrl={`${import.meta.env.BASE_URL}/images/labo.jpg`}
     imageAlt="Laboratoire de sciences du lycée"
     reversed={true}
     bgColor="bg-gray-50"

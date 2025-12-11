@@ -4,10 +4,6 @@ import Hero from '../components/Hero.astro';
 import Section from '../components/Section.astro';
 import ImageSection from '../components/ImageSection.astro';
 import Card from '../components/Card.astro';
-import { getMediaCollection, getImageUrl } from '../utils/media.js';
-
-// Load media collection
-const { media, available } = await getMediaCollection();
 ---
 
 <Layout title="À propos - Lycée Sud-Médoc La Boétie">
@@ -15,14 +11,14 @@ const { media, available } = await getMediaCollection();
   <Hero 
     title="À propos du lycée"
     description="Découvrez l'histoire, les valeurs et l'équipe qui font la réputation du Lycée Sud-Médoc La Boétie depuis plus de 35 ans."
-    backgroundImage={getImageUrl('courLycee', `${import.meta.env.BASE_URL}/images/cour-lycee.jpg`)}
+    backgroundImage={`${import.meta.env.BASE_URL}/images/cour-lycee.jpg`}
   />
 
   <!-- Histoire -->
   <ImageSection 
     title="Notre histoire"
     description="Créé en 1985, le Lycée Sud-Médoc La Boétie porte le nom du célèbre humaniste français Étienne de La Boétie, ami de Montaigne et fervent défenseur de la liberté. Depuis sa création, notre établissement n'a cessé de grandir et de se moderniser pour offrir à ses élèves un environnement d'apprentissage exceptionnel au cœur du Médoc."
-    imageUrl={getImageUrl('elevesAction', `${import.meta.env.BASE_URL}/images/eleves-action.jpg`)}
+    imageUrl={`${import.meta.env.BASE_URL}/images/eleves-action.jpg`}
     imageAlt="Élèves en action au lycée Sud-Médoc"
     bgColor="bg-white"
   >
@@ -88,7 +84,7 @@ const { media, available } = await getMediaCollection();
   <ImageSection 
     title="Notre équipe éducative"
     description="Plus de 80 enseignants et personnels administratifs travaillent ensemble pour offrir un accompagnement de qualité à nos 1200 élèves. Notre équipe pluridisciplinaire met son expertise au service de la réussite de chaque lycéen."
-    imageUrl={getImageUrl('cdi', `${import.meta.env.BASE_URL}/images/cdi.jpeg`)}
+    imageUrl={`${import.meta.env.BASE_URL}/images/cdi.jpeg`}
     imageAlt="Centre de documentation du lycée"
     reversed={true}
     bgColor="bg-white"

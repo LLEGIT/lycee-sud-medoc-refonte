@@ -2,7 +2,6 @@
 import '../styles/global.css';
 import Header from './Header.astro';
 import Footer from './Footer.astro';
-import { getMediaCollection, getImageUrl } from '../utils/media.js';
 
 export interface Props {
   title: string;
@@ -10,16 +9,13 @@ export interface Props {
 }
 
 const { title, description = "Lycée Sud-Médoc La Boétie - Établissement d'enseignement secondaire au Taillan-Médoc" } = Astro.props;
-
-// Load media collection
-const { media, available } = await getMediaCollection();
 ---
 
 <!DOCTYPE html>
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href={getImageUrl('logo', `${import.meta.env.BASE_URL}/images/logo.png`)} />
+    <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}/images/logo.png`} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />

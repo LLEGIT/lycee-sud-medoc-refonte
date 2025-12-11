@@ -8,7 +8,6 @@ export interface Props {
   secondaryButtonText?: string;
   secondaryButtonHref?: string;
   backgroundImage?: string;
-  backgroundColor?: string;
 }
 
 const { 
@@ -19,17 +18,12 @@ const {
   primaryButtonHref = "#",
   secondaryButtonText,
   secondaryButtonHref = "#",
-  backgroundImage,
+  backgroundImage
 } = Astro.props;
-
-let sectionStyle = '';
-if (backgroundImage) {
-  sectionStyle = `background-image: url('${backgroundImage}'); background-size: cover; background-position: center;`;
-}
 ---
 
-<section class="relative text-white py-24 overflow-hidden" style={sectionStyle}>
-  <div class={`absolute inset-0 ${backgroundImage ? 'bg-black opacity-50' : 'bg-gradient-to-r from-blue-500 to-blue-700'}`}></div>
+<section class="relative text-white py-24 overflow-hidden" style={backgroundImage ? `background-image: url('${backgroundImage}'); background-size: cover; background-position: center;` : ''}>
+  <div class={`absolute inset-0 ${backgroundImage ? 'bg-black opacity-50' : 'bg-gradient-to-r from-blue-600 to-blue-800'}`}></div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">{title}</h1>
     {subtitle && <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto drop-shadow-md">{subtitle}</p>}

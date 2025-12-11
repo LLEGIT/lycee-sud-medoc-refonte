@@ -5,27 +5,6 @@ import Section from '../components/Section.astro';
 import ImageSection from '../components/ImageSection.astro';
 import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
-import StrapiImage from '../components/StrapiImage.astro';
-import { fetchAPI, getStrapiMedia } from '../utils/strapi.js';
-import { getMediaCollection, getImageUrl } from '../utils/media.js';
-
-// Load media collection
-const { media, available } = await getMediaCollection();
-
-// Additional orientation-specific images (if needed)
-let orientationSpecificImages = {};
-if (available) {
-  try {
-    const imagesResponse = await fetchAPI('/upload/files');
-    const images = imagesResponse;
-    
-    orientationSpecificImages = {
-      heroOrientation: images.find((img: any) => img.name.toLowerCase().includes('hero-orientation')),
-    };
-  } catch (error) {
-    console.warn('Could not fetch orientation-specific images:', error.message);
-  }
-}
 ---
 
 <Layout title="Orientation - Lycée Sud-Médoc La Boétie">
@@ -33,14 +12,14 @@ if (available) {
   <Hero 
     title="Orientation"
     description="Construisons ensemble votre projet d'orientation post-bac. Notre équipe vous accompagne dans vos choix d'études supérieures et votre insertion professionnelle."
-    backgroundImage={getImageUrl('heroOrientation', null) || orientationSpecificImages.heroOrientation ? getStrapiMedia(orientationSpecificImages.heroOrientation) : null}
+    backgroundImage={`${import.meta.env.BASE_URL}/images/cdi.jpeg`}
   />
 
   <!-- Accompagnement orientation -->
   <ImageSection 
     title="Un accompagnement personnalisé"
     description="Nos conseillers d'orientation et psychologues de l'Éducation Nationale, en partenariat avec nos équipes pédagogiques, vous accompagnent dans la construction de votre projet d'orientation dès la classe de seconde."
-    imageUrl={getImageUrl('elevesAction', `${import.meta.env.BASE_URL}/images/eleves-action.jpg`)}
+    imageUrl={`${import.meta.env.BASE_URL}/images/eleves-action.jpg`}
     imageAlt="Élèves en consultation d'orientation"
     bgColor="bg-white"
   >
@@ -111,7 +90,7 @@ if (available) {
   <ImageSection 
     title="Poursuites d'études"
     description="Nos élèves intègrent une grande diversité d'établissements d'enseignement supérieur, reflet de la qualité de leur formation et de l'accompagnement reçu."
-    imageUrl={getImageUrl('salleDeClasse', `${import.meta.env.BASE_URL}/images/salle-de-classe.png`)}
+    imageUrl={`${import.meta.env.BASE_URL}/images/salle-de-classe.png`}
     imageAlt="Salle de classe préparant l'avenir"
     reversed={true}
     bgColor="bg-white"
@@ -200,12 +179,10 @@ if (available) {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <Card title="ONISEP" bgColor="bg-white">
         <div class="text-center">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-            {getImageUrl('onisep', null) ? (
-              <img src={getImageUrl('onisep', `${import.meta.env.BASE_URL}/images/onisep.png`)} alt="Logo ONISEP" class="max-w-full max-h-full object-contain" />
-            ) : (
-              <img src={`${import.meta.env.BASE_URL}/images/onisep.png`} alt="Logo ONISEP" />
-            )}
+          <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
           </div>
           <p class="text-gray-600 mb-4">Information sur les métiers et les formations</p>
           <Button 
@@ -218,12 +195,10 @@ if (available) {
 
       <Card title="Horizons21" bgColor="bg-white">
         <div class="text-center">
-          <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-            {getImageUrl('horizons21', null) ? (
-              <img src={getImageUrl('horizons21', `${import.meta.env.BASE_URL}/images/icone-horizons21.gif`)} alt="Logo Horizons21" class="max-w-full max-h-full object-contain" />
-            ) : (
-              <img src={`${import.meta.env.BASE_URL}/images/icone-horizons21.gif`} alt="Logo Horizons21" />
-            )}
+          <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
           </div>
           <p class="text-gray-600 mb-4">Aide au choix des spécialités</p>
           <Button 
@@ -253,7 +228,7 @@ if (available) {
   </Section>
 
   <!-- Contact orientation -->
-  <Section title="Besoin d'aide ?" containerClass="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+  <Section containerClass="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
     <div class="text-center text-white">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">Besoin d'aide pour votre orientation ?</h2>
       <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">Nos conseillers d'orientation sont à votre disposition pour vous accompagner dans vos choix</p>
